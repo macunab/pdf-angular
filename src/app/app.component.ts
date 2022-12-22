@@ -28,7 +28,8 @@ export class AppComponent {
       doc.addImage(img, 'PNG', bufferX, bufferY, pdfWidth, pdfHeight, undefined, 'FAST');
       return doc;
     }).then((docResult) => {
-      docResult.save(`${new Date().toDateString()}_invoice.pdf`);
+      docResult.output('dataurlnewwindow', { filename: `${new Date().toDateString()}_invoice.pdf`});
+     // docResult.save(`${new Date().toDateString()}_invoice.pdf`);
     })
   }
 
